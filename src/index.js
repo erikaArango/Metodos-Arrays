@@ -26,8 +26,6 @@ arregloShippingGroups.forEach((element) => {
 });
 
 //----------- some - quiero saber si algun SG tiene 05adcb73-3d68-4b1a-a9f7-4db5d63051ea como pickerID
-
-arregloShippingGroups.forEach((element) => {
   const picker = arregloShippingGroups.some((pickerId) => {
     if (pickerId === "05adcb73-3d68-4b1a-a9f7-4db5d63051ea") {
       return true;
@@ -35,7 +33,7 @@ arregloShippingGroups.forEach((element) => {
     return false;
   });
   console.log(" * picker ID " + picker);
-});
+
 
 //-------------every - quiero saber si todos los sg son del local 95
 arregloShippingGroups.forEach((element) => {
@@ -55,5 +53,5 @@ arregloShippingGroups.forEach((element) => {
       return valor;
     }
   });
-  console.log("* listado Shipping Groups  " + sg);
+  console.log("* sg " + sg);
 });
