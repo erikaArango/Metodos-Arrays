@@ -26,32 +26,30 @@ arregloShippingGroups.forEach((element) => {
 });
 
 //----------- some - quiero saber si algun SG tiene 05adcb73-3d68-4b1a-a9f7-4db5d63051ea como pickerID
-  const picker = arregloShippingGroups.some((pickerId) => {
-    if (pickerId === "05adcb73-3d68-4b1a-a9f7-4db5d63051ea") {
-      return true;
-    }
-    return false;
-  });
-  console.log(" * picker ID " + picker);
+const picker = arregloShippingGroups.some(({pickerId}) => {
 
+  if (pickerId === "05adcb73-3d68-4b1a-a9f7-4db5d63051ea") {
+    return true;
+  }
+  return false;
+  
+});
+console.log(" * picker ID " + picker);
 
 //-------------every - quiero saber si todos los sg son del local 95
-arregloShippingGroups.forEach((element) => {
-  const local = arregloShippingGroups.every((storeId) => {
+  const local = arregloShippingGroups.every(({storeId}) => {
     if (storeId === "95") {
       return true;
     }
     return false;
   });
   console.log(" * los sg son del local 95? " + local);
-});
 
 //------------- filter - quiero que me regreses solo el sg que sea 3001628803
-arregloShippingGroups.forEach((element) => {
-  const sg = arregloShippingGroups.filter((valor) => {
-    if (valor === 3001628803) {
-      return valor;
+  const sg = arregloShippingGroups.filter(({id}) => {
+    if (id === "3001628803") {
+      return id;
     }
   });
-  console.log("* sg " + sg);
-});
+  console.log({sg});
+
